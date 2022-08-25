@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E3E3E3"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="19dp">
+
+
+
+<LinearLayout
+android:id="@+id/bookDivRow"
+    android:background="@color/white"
+android:layout_height="wrap_content"
+android:layout_width="match_parent">
+
+<ImageView
+    android:id="@+id/imgBookImage"
+    android:layout_height="110dp"
+    android:layout_weight="1.5"
+    android:layout_width="0dp"
+    android:padding="5dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/default_book_cover" />
+
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_weight="3.3"
+    android:layout_width="0dp">
+
+    <TextView
+        android:ellipsize="end"
+        android:id="@+id/txtBookName"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:text="Name o adsfaf heloowldlfa asdfasdfa"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtBookAuthor"
+        android:layout_below="@id/txtBookName"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:text="Name of the Author"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txtBookPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtBookAuthor"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:text="Rs. 299"
+        android:textColor="#357a38"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+</RelativeLayout>
+
+
+<!--Many times we see that texts have an image along with them to
+their right or left. This is added with the help of the
+drawableLeft (or drawableRight and so on) attribute-->
+
+<TextView
+    android:drawableLeft="@drawable/ic_sort_icon"
+    android:drawablePadding="4dp"
+    android:id="@+id/txtBookRating"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.2"
+    android:layout_width="0dp"
+    android:padding="4dp"
+    android:text="4.5"
+    android:textColor="#ffca28"
+    android:textSize="15sp"
+    android:textStyle="bold">
+
+</TextView>
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>
