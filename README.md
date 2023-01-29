@@ -1,5 +1,6 @@
 # Book-Hub-Android-App
 
+The Android app displays the books with a short description and allows users to add the books to their favorites.
 
 To Download : https://drive.google.com/file/d/1JOO2IDxIbVGx5B6D6vbDWzSddfV5Dui6/view?usp=share_link
 
