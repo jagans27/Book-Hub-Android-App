@@ -5,8 +5,8 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
-
+    tools:context=".activity.MainActivity"
+    tools:openDrawer="start">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
@@ -19,29 +19,29 @@
             android:elevation="0dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+            <!-- Has 2 features, to scroll and will enter always-->
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolBar"
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_500"
+                android:background="#FF7D7D"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                app:layout_scrollFlags="scroll|enterAlways"/>
+                app:layout_scrollFlags="scroll|enterAlways" />
         </com.google.android.material.appbar.AppBarLayout>
 
+        <!--Behavior tag line is important, the fragment will start from the bottom of the toolbar-->
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="match_parent"
+        android:id="@+id/navigationview"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/drawer_header"

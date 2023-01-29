@@ -1,10 +1,10 @@
 package com.jagan.bookhub.model
 
 data class Book(
-    val bookId : String,
-    val bookName : String,
-    val bookAuthor : String,
-    val bookRating : String,
-    val bookPrice : String,
-    val bookImage : String
+    var bookId: String,
+    var bookName: String,
+    var bookAuthor: String,
+    var bookRating: String,
+    var bookPrice: String,
+    var bookImage: String
 )

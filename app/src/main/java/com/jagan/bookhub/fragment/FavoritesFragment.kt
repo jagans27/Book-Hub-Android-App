@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.jagan.bookhub.R
@@ -16,35 +19,35 @@ import com.jagan.bookhub.adapter.FavouriteRecyclerAdapter
 import com.jagan.bookhub.database.BookDatabase
 import com.jagan.bookhub.database.BookEntity
 
-class FavoritesFragment : Fragment() {
 
-    lateinit var recyclerFavourite : RecyclerView
+class FavouritesFragment : Fragment() {
 
-    lateinit var layoutManager: RecyclerView.LayoutManager
+    lateinit var recyclerFavourite: RecyclerView
     lateinit var recyclerAdapter: FavouriteRecyclerAdapter
+    lateinit var progressLayout: RelativeLayout
+    lateinit var progressBar: ProgressBar
+    lateinit var layoutManager: LinearLayoutManager
 
-    var dbBookList = listOf<BookEntity>()
+    //for book data
+    var bookList = listOf<BookEntity>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        Toast.makeText(activity as Context,"In Favourites Fragment",Toast.LENGTH_SHORT).show()
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_favorites, container, false)
 
-        recyclerFavourite = view.findViewById(R.id.recyclerFavourite)
+        recyclerFavourite = view.findViewById(R.id.recyclerFavourites)
+        progressLayout = view.findViewById(R.id.progressFavLayout)
+        progressBar = view.findViewById(R.id.progressFavBar)
 
+        layoutManager = GridLayoutManager(activity as Context, 2)
+        bookList = RetrieveFavourites(activity as Context).execute().get()
 
-        layoutManager = GridLayoutManager(activity as Context,2)
-        dbBookList = RetrieveFavourites(activity as Context).execute().get()
-
-        println("The BOOKS ==> ${dbBookList.toString()}")
-
-        if(activity !=null)
-        {
-            recyclerAdapter = FavouriteRecyclerAdapter(activity as Context,dbBookList)
+        if (activity != null) {
+            progressLayout.visibility = View.GONE
+            recyclerAdapter = FavouriteRecyclerAdapter(activity as Context, bookList)
             recyclerFavourite.adapter = recyclerAdapter
             recyclerFavourite.layoutManager = layoutManager
         }
@@ -52,35 +55,12 @@ class FavoritesFragment : Fragment() {
 
         return view
     }
-}
 
-class RetrieveFavourites(val context: Context) : AsyncTask<Void,Void,List<BookEntity>>()
-{
-    override fun doInBackground(vararg p0: Void?): List<BookEntity> {
-        println("---> BEFORE RETRIVE")
+    class RetrieveFavourites(val context: Context) : AsyncTask<Void, Void, List<BookEntity>>() {
+        override fun doInBackground(vararg p0: Void?): List<BookEntity> {
+            val db = Room.databaseBuilder(context, BookDatabase::class.java, "books-db").build()
 
-        val db = Room.databaseBuilder(context,BookDatabase::class.java,"bookS-db").build()
-        println("RETRIVE ==> ${db.toString()} +++ ${db.bookDao().getAllBooks()}")
-        return db.bookDao().getAllBooks()
+            return db.bookDao().getAllBooks()
+        }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

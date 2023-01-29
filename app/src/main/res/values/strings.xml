@@ -1,13 +1,25 @@
 <resources>
-    <string name="app_name">BookHub</string>
+    <string name="app_name">Book Hub</string>
     <string name="dashboard">Dashboard</string>
-    <string name="favorites">Favorites</string>
     <string name="profile">Profile</string>
-    <string name="about">About</string>
-    <string name="book_hub">Book Hub</string>
-    <string name="close_drawer">Close Drawer</string>
+    <string name="favourites">Favourites</string>
+    <string name="about_app">About App</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
     <string name="open_drawer">Open Drawer</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Dashboard</string>
-    <string name="sort">sort</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtdashboard">Dashboard Fragment</string>
+    <string name="favourites_fragment">Favourites Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="about_app_fragment">About App Fragment</string>
+    <string name="name_of_author">Name of Author</string>
+    <string name="list_item">List Item</string>
+    <string name="_4_5">4.5</string>
+    <string name="book_cost">Book Cost</string>
+    <string name="text_rupees_symbol">\"Rs. \"</string>
+    <string name="add_to_favourites">Add to Favourites</string>
+    <string name="string_action_sort">Sort</string>
+    <string name="sample_author">Sample Author</string>
+    <string name="sample_cost">Rs. 499</string>
+    <string name="sample_book_name">Book Name</string>
 </resources>

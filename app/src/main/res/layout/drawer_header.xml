@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="250dp"
-    android:background="@color/purple_200"
+    android:background="#FF7D7D"
     android:orientation="horizontal">
 
     <ImageView
@@ -20,8 +20,8 @@
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/book_log"
         android:padding="20dp"
-        android:text="@string/book_hub"
-        android:textColor="@color/white"
+        android:text="@string/app_name"
+        android:textColor="#ffffff"
         android:textSize="40sp"
         android:textStyle="bold" />
 </RelativeLayout>

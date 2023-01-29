@@ -1,15 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.ProfileFragment">
 
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="19dp"
+        android:src="@drawable/ic_profile" />
+
     <TextView
+        android:id="@+id/txtProfile"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgProfile"
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:text="Jagan S"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/profile"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:layout_below="@+id/txtProfile"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="Android Developer"
+        android:textColor="#373737"
+        android:textSize="15sp"
+        android:textStyle="italic" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="Java Developer"
+        android:textColor="#373737"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv2"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="Web Developer"
+        android:textColor="#373737"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv3"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="Github : jagan0227"
+        android:textColor="#373737"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>
